@@ -3,7 +3,11 @@ import { getUserData, getUserPassword } from "./getUserData";
 const { createHash } = require("node:crypto");
 const jwt = require("jsonwebtoken");
 
-const twilio = require("twilio")();
+const twilio = require("twilio")(
+  process.env.TWILIO_API_KEY,
+  process.env.TWILIO_API_SECRET,
+  { accountSid: process.env.TWILIO_ACCOUNT_SID }
+);
 const verifyService = twilio.verify.v2.services(
   process.env.TWILIO_VERIFY_SERVICE
 );

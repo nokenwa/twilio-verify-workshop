@@ -53,24 +53,24 @@ export default function LoginModal() {
     const json = await res.json();
 
     //StartingState
-    // if (json.success) {
-    //   router.push("/account");
-    // } else {
-    //   setMsg(json.msg);
-    // }
-
-    //STEP 1: SMS 2FA
     if (json.success) {
-      setMFAModal({
-        visible: true,
-        channel: json.channel,
-        tel: json.tel,
-        email: json.email,
-      });
-      console.log("json.tel:", json.tel);
+      router.push("/account");
     } else {
       setMsg(json.msg);
     }
+
+    //STEP 1: SMS 2FA
+    // if (json.success) {
+    //   setMFAModal({
+    //     visible: true,
+    //     channel: json.channel,
+    //     tel: json.tel,
+    //     email: json.email,
+    //   });
+    //   console.log("json.tel:", json.tel);
+    // } else {
+    //   setMsg(json.msg);
+    // }
   };
 
   const handleMFA = async (event) => {

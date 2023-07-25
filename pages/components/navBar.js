@@ -36,8 +36,8 @@ export default function NavBar({ loggedIn }) {
           </Link>
           <Stack orientation="horizontal" spacing="space60">
             {loggedIn && (
-              <Button as="a" href="/orders" variant="primary">
-                Secret Button
+              <Button as="a" href="/account" variant="primary">
+                My Account
               </Button>
             )}
             {!loggedIn ? <LoginModal /> : <LogoutModal />}

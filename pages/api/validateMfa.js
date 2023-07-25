@@ -1,7 +1,12 @@
 import { setCookie } from "cookies-next";
 const jwt = require("jsonwebtoken");
 import { getUserData, getUserPassword } from "./getUserData";
-const twilio = require("twilio")();
+
+const twilio = require("twilio")(
+  process.env.TWILIO_API_KEY,
+  process.env.TWILIO_API_SECRET,
+  { accountSid: process.env.TWILIO_ACCOUNT_SID }
+);
 const verifyService = twilio.verify.v2.services(
   process.env.TWILIO_VERIFY_SERVICE
 );

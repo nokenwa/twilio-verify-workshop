@@ -1,0 +1,10 @@
+{
+    "instructions":"REPLACE THESE WITH YOUR OWN EMAIL, PHONE NUMBER, USERNAME AND PASSWORD",
+    "fakeDB":[{
+        "username": "Nathaniel",
+        "password": "password",
+        "email": "nokenwa@chatterboxcoder.me",
+        "tel": "+447947574148",
+        "preferredMFA": "whatsapp"
+    }]
+}
