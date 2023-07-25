@@ -1,4 +1,3 @@
-import { setCookie } from "cookies-next";
 import { getUserData, getUserPassword } from "./getUserData";
 const jwt = require("jsonwebtoken");
 

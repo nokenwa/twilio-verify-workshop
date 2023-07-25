@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 
       if (verificationCheck.status === "approved") {
         const user = await getUserData(email);
-        let token = jwt.sign({ ...user }, process.env.SECRET);
+        let token = jwt.sign({ ...user["0"] }, process.env.SECRET);
         await setCookie("jwt", token, { req, res });
 
         return res.status(200).json({ success: true });
