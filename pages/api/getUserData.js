@@ -1,10 +1,7 @@
-import { setCookie, getCookies } from "cookies-next";
-const { createHash } = require("node:crypto");
-
-import { fakeDB } from "../../fakeDB.json";
+import data from "../../data.json";
 
 export async function getUserData(email) {
-  const users = fakeDB.filter((user) => {
+  const users = data.fakeDB.filter((user) => {
     return user.email === email;
   });
 
@@ -12,7 +9,7 @@ export async function getUserData(email) {
   return passwordlessUsers;
 }
 export async function getUserPassword(email) {
-  const users = fakeDB.filter((user) => {
+  const users = data.fakeDB.filter((user) => {
     return user.email === email;
   });
   return users[0].password;

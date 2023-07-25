@@ -59,6 +59,8 @@ Replace the details in `fakeDB.json` with your own. You can use fake data but ma
 
 # Phase 4: Tour the Project
 
+> Skip to this part`git checkout start`
+
 Now that you've got the project running let's talk about what we have.
 We have the home page and in the top right you should see a login Button.
 Try navigating to `/account`. You should be forwarded back to the home page.
