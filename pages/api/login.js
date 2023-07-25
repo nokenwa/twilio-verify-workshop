@@ -1,9 +1,8 @@
-import { setCookie, getCookies } from "cookies-next";
+import { setCookie } from "cookies-next";
 import { getUserData, getUserPassword } from "./getUserData";
 const jwt = require("jsonwebtoken");
 
 export default async function handler(req, res) {
-  console.log("hello");
   if (req.method == "POST") {
     const email = req.body["email"];
     const guess = req.body["password"];

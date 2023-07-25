@@ -20,6 +20,7 @@ export default function LoginModal() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    //Make POST Request to '/login'
     const data = {
       email: event.target.email.value,
       password: event.target.password.value,
@@ -32,7 +33,6 @@ export default function LoginModal() {
       },
       body: JSONdata,
     };
-
     const res = await fetch("/api/login", options);
     const json = await res.json();
 
@@ -47,7 +47,6 @@ export default function LoginModal() {
     <>
       <Button variant="primary" onClick={handleOpen}>
         Login
-        {/* <LogInIcon decorative={false} title="Description of icon" /> */}
       </Button>
 
       <Modal
