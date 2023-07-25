@@ -79,6 +79,10 @@ We're storing our user data in a jwt and using 'server-side' props to check for 
 
 # Phase 6: Implement Preferred Channel MFA
 
+> Skip to solution with `git checkout preferredMFA`
+
+[ ] - modify login.js to change channels from sms to 'preferredMFA' from user profile
+
 # Phase 7: Implement Retry and FallBack Logic
 
 # Phase 8: Secure against SMS Pumping

@@ -25,15 +25,14 @@ export default async function handler(req, res) {
     const user = users[0];
     const password = await getUserPassword(email);
     if (password == guess) {
-      //STEP 1 SMS 2FA
       try {
         await verifyService.verifications.create({
           to: user.tel,
-          channel: "sms",
+          channel: user.preferredMFA,
         });
         return res.status(200).json({
           success: true,
-          verification: "sms",
+          channel: user.preferredMFA,
           tel: user.tel,
           email: email,
         });
@@ -42,24 +41,6 @@ export default async function handler(req, res) {
           .status(400)
           .json({ msg: "Something went wrong. Please try again" });
       }
-
-      // //STEP 2 Multichannel 2FA
-      // try {
-      // await verifyService.verifications.create({
-      //   to: user.tel,
-      //   channel: user.preferredMFA,
-      // });
-      //   return res.status(200).json({
-      //     success: true,
-      //     channel: user.preferredMFA,
-      //     tel: user.tel,
-      //     email: email,
-      //   });
-      // } catch (error) {
-      //   return res
-      //     .status(400)
-      //     .json({ msg: "Something went wrong. Please try again" });
-      // }
     } else {
       return res
         .status(400)
