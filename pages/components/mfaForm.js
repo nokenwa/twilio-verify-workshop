@@ -11,18 +11,21 @@ import {
 import { useState, useEffect } from "react";
 export default function MFAForm(props) {
   function RetryButton() {
-    const [count, setCount] = useState({ i: 30, retries: 0 });
+    const [count, setCount] = useState({ i: 30, attempts: 1 });
     useEffect(() => {
       const interval = setInterval(() => {
-        setCount({ i: count.i - 1 });
+        setCount({ i: count.i - 1, attempts: count.attempts });
       }, 1000);
       return () => clearInterval(interval);
     }, [count]);
 
     async function retryMFA(event) {
       event.preventDefault();
-
-      setCount({ i: (count.retries + 1) * 30, retries: count.retries + 1 });
+      const attempts = count.attempts + 1;
+      const i = attempts * 30;
+      setCount({ i, attempts });
+      console.log(`count`, count.i);
+      console.log(`attempts`, count.attempts);
       const data = {
         tel: props.tel,
         email: props.email,
@@ -37,8 +40,8 @@ export default function MFAForm(props) {
         body: JSONdata,
       };
 
-      const res = await fetch("/api/retryMfa", options);
-      const json = await res.json();
+      // const res = await fetch("/api/retryMfa", options);
+      // const json = await res.json();
     }
 
     return (
@@ -58,6 +61,7 @@ export default function MFAForm(props) {
       </Box>
     );
   }
+
   return (
     <>
       <Form id="mfa" onSubmit={props.onSubmitHandler}>

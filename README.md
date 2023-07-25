@@ -83,8 +83,15 @@ We're storing our user data in a jwt and using 'server-side' props to check for 
 
 [ ] - modify login.js to change channels from sms to 'preferredMFA' from user profile
 
-# Phase 7: Implement Retry and FallBack Logic
+# Phase 7: Implement Exponential Retry
+
+> Skip to solution with `git checkout retryLogic`
+
+[ ] - Add Retry Logic Button to MFA Form in `mfaForm`
+[ ] - create `retryMfa.js` to resend a verification
 
 # Phase 8: Secure against SMS Pumping
+
+Head over to the Twilio Console and turn on Twilio Fraud Guard [here](https://console.twilio.com/us1/develop/verify/services)
 
 # Phase 9: Implement Email MFA

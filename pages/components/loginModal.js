@@ -107,6 +107,7 @@ export default function LoginModal() {
               tel={mfaModal.tel}
               email={mfaModal.email}
               msg={msg}
+              retryLogic
             />
           )}
         </ModalBody>
