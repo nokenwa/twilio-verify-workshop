@@ -1,6 +1,6 @@
 import { setCookie } from "cookies-next";
 const jwt = require("jsonwebtoken");
-import { getUserData, getUserPassword } from "./getUserData";
+import { getUserData } from "./getUserData";
 
 const twilio = require("twilio")(
   process.env.TWILIO_API_KEY,

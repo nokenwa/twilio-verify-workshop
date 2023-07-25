@@ -71,6 +71,12 @@ We're storing our user data in a jwt and using 'server-side' props to check for 
 
 # Phase 5: Implement SMS 2FA
 
+> Skip to solution with `git checkout sms`
+
+[ ] - Import mfaModal and make it visible after successful login http request
+[ ] - modify `login.js` to create a SMS Verification
+[ ] - create `validateMfa.js` to validate SMS Verification
+
 # Phase 6: Implement Preferred Channel MFA
 
 # Phase 7: Implement Retry and FallBack Logic
