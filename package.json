@@ -1,5 +1,5 @@
 {
-  "name": "twilio-verify-wwdc",
+  "name": "next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@twilio-paste/core": "^19.5.0",
+    "@twilio-paste/core": "^19.6.0",
     "@twilio-paste/icons": "^11.2.2",
-    "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "cookies": "^0.8.0",
     "cookies-next": "^2.1.2",
     "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
-    "intl-tel-input": "^18.1.8",
-    "next": "13.4.10",
+    "eslint-config-next": "13.4.12",
+    "jsonwebtoken": "^9.0.1",
+    "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "twilio": "^4.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.4.4",
+    "@types/react": "18.2.15"
   }
 }
