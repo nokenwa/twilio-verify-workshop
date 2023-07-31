@@ -1,6 +1,6 @@
 ##
 
-# Twilio Verify Workshop at WWDC
+# Twilio Verify Workshop at WWC
 
 This workshop will teach you the fundamentels of Twilio Verify and how to use Twilio Verify to secure your applications with 2Factor Authentication.
 
